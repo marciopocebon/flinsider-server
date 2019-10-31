@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -5,7 +7,7 @@ import routes from './routes';
 
 const app = express();
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack-jxhrd.mongodb.net/flinsider?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
